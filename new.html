@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+</head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 80px 0 24px;
+  font-family: sans-serif;
+  margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 20);
+    background-color:  #000000!important;
+    overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+
+
+h1 {
+  text-align: center;
+  padding: 0 15px;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 30vw;
+  list-style: none;
+  
+}
+
+.grid li:nth-child(11n + 9) {
+  grid-column: 1 / -1;
+  grid-row: span 2;
+}
+
+.grid figure,
+.grid img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid img {
+  object-fit: cover;
+  background: #f5f3f4;
+  /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); */
+  transition: all 1s ease-in-out 0s;
+ box-shadow: 2px 2px 20px gray, inset 2px 2px 10px lightgray;
+}
+.grid img:hover{
+  box-shadow: 4px 4px 25px black, inset 2px 2px 2px 10px rgb(0, 0, 20);
+}
+
+@media (min-width: 850px) {
+  .grid {
+    grid-gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 12vw;
+  }
+
+  .grid li {
+    --row-step: calc(4 * var(--n));
+  }
+
+  .grid li:nth-child(11n + 1) {
+    grid-column: 1;
+    grid-row: calc(1 + var(--row-step)) / span 2;
+  }
+
+  .grid li:nth-child(11n + 2) {
+    grid-column: 2 / span 2;
+    grid-row: calc(1 + var(--row-step)) / span 2;
+  }
+
+  .grid li:nth-child(11n + 3) {
+    grid-column: 4;
+    grid-row: calc(1 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 4) {
+    grid-column: 5;
+    grid-row: calc(1 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 5) {
+    grid-column: 4;
+    grid-row: calc(2 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 6) {
+    grid-column: 5;
+    grid-row: calc(2 + var(--row-step)) / span 2;
+  }
+
+  .grid li:nth-child(11n + 7) {
+    grid-column: 2;
+    grid-row: calc(3 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 8) {
+    grid-column: 1;
+    grid-row: calc(3 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 9) {
+    grid-column: 3 / span 2;
+    grid-row: calc(3 + var(--row-step)) / span 2;
+  }
+
+  .grid li:nth-child(11n + 10) {
+    grid-column: 1 / span 2;
+    grid-row: calc(4 + var(--row-step));
+  }
+
+  .grid li:nth-child(11n + 11) {
+    grid-column: 5;
+    grid-row: calc(4 + var(--row-step));
+  }
+}
+h1{
+  font-size: large;
+  color: white;
+}
+header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000; /* Adjust as needed */
+      /* padding: 10px 20px; */
+      box-sizing: border-box;
+      border-radius: 30px;
+       box-shadow: 2px 2px 20px gray, inset 2px 2px 10px lightgray;
+       margin-bottom: 30px;
+       margin-top: 20px;
+       height: 100px;
+       width: auto;
+       align-items: center;
+       position: relative;
+    
+    }
+    
+    .header-logo img {
+      width: auto; /* Adjust logo size as needed */
+    }
+    
+    .header-nav {
+      flex-grow: 1;
+      text-align: center;
+    }
+    
+    .header-nav a {
+      color: #fff; /* Adjust link color as needed */
+      text-decoration: none;
+      margin: 0 30px;
+      font-size: 20px;
+    }
+    .social-icons {
+    margin-bottom: 20px;
+    margin-left: 20px; /* Adjust the left margin as needed */
+    margin-right: 30px;
+}
+
+.social-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px; /* Add right margin to separate icons/buttons */
+}
+
+.social-icons button i {
+    vertical-align: middle;
+}
+
+.social-icons button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+       /* Logo styles */
+       .logo {
+        position: absolute;
+        top: 10px;
+        height: 70px;
+        width: auto;
+        left: 60px;
+        /* animation: fadeIn 2s ease-in; Animation for fade in effect */
+        mix-blend-mode: lighten;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .logo-img {
+        height: 250px;
+        width: auto;
+      }
+      
+    </style>
+    <body>
+      <header>
+        <div class="header-logo">
+          <img src="images/rtbnlogo.png" class="logo" alt="Logo">
+        </div>
+        <nav class="header-nav">
+          <a href="test.html">Home</a>
+          <a href="about-us.html">About</a>
+          <a href="new.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <!-- Add more navigation links as needed -->
+        </nav>
+        <div class="header-social">
+          <div class="social-icons">
+            <button>   <a href="https://www.facebook.com/YouSavad?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+            <button>  <a href="https://instagram.com/raagthebandbengaluru?igshid=YmMyMTA2M2Y" target="_blank"><i class="fab fa-instagram"></i></a></button>
+            <button>  <a href="https://wa.me/message/WZQNY3EAESPNB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <button> <a href="https://youtube.com/@raagthebandbengaluru" target="_blank"><i class="fab fa-youtube"></i></a></button>
+                <button><i class="fas fa-envelope"></i></button>
+        </div>
+        </div>
+      </header>
+  <h1>Our Gallery</h1>
+    <ul class="grid">
+      <!-- FIRST BUNCH OF IMAGES -->
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="1138" src="images/rgb1138.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgbn8.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgbn9.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgbn13.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="418" src="images/rgbn27.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="853" src="images/rgbn30.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="314" src="images/rgbn21.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgb4273.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="960" src="images/rgbn25.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgbn29.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 0;">
+        <figure>
+          <img width="640" height="427" src="images/rgb4275.jpg" alt="">
+        </figure>
+      </li>
+    
+      <!-- SECOND BUNCH OF IMAGES -->
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="1141" src="images/rgbn20.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="853" src="images/rgbn26.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="648" src="images/rgbn24.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="480" src="https://assets.codepen.io/162656/morocco14.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="427" src="images/rgb4278.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="962" src="https://assets.codepen.io/162656/morocco16.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42711.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="425" src="images/rgbn31.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="853" src="images/rgbn33.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42710.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 1;">
+        <figure>
+          <img width="640" height="426" src="images/rgbn2.jpg" alt="">
+        </figure>
+      </li>
+    
+      <!-- THIRD BUNCH OF IMAGES -->
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="960" src="images/rgbn35.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb4279.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42712.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="435" src="images/rgbn8.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42713.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="963" src="images/rgbn32.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb4277.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42715.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="960" src="images/rgbn11.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42714.jpg" alt="">
+        </figure>
+      </li>
+      <li style="--n: 2;">
+        <figure>
+          <img width="640" height="427" src="images/rgb42716.jpg" alt="">
+        </figure>
+      </li>
+    </ul>
+    <footer>
+      &copy; 2024 raagtheband. All Rights Reserved.
+  </footer>
+      <!-- font awesome script -->
+      <script src="https://kit.fontawesome.com/393ff6bdca.js" crossorigin="anonymous"></script>
+</body>
+</html>

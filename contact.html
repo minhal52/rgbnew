@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact us</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+</head>
+<style>/* ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #000000;
+            /* overflow-x: hidden; */
+        }
+.contact-container {
+  position: relative;
+  width: 350px;
+  height: 600px; /* Increased height */
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 32px;
+  overflow: hidden;
+  margin: auto; /* Center the container */
+  /* margin-top: 25px; */
+  margin-bottom: 50px;
+}
+
+.contact-container::before {
+  content: "";
+  position: absolute;
+  height: 750px; /* Adjusted height */
+  width: 750px;
+  background: conic-gradient(transparent, transparent, transparent, #d400d4);
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.contact-container::after {
+  content: "";
+  position: absolute;
+  height: 750px; /* Adjusted height */
+  width: 750px;
+  background: conic-gradient(transparent, transparent, transparent, #00cfff);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(0);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 5px;
+  background-color: #0c1022;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.form-box .form h2 {
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.form .input-box {
+  position: relative;
+  margin: 20px 0; /* Adjusted margin */
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+input:focus~label,
+input:valid~label {
+  top: -5px;
+}
+
+.input-box label {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.group a {
+  position: relative;
+  top: -15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+button {
+  margin-top: 10px; /*added margin */
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+button:focus {
+  color: #fff;
+  background-color: #0c1022;
+  border: 2px solid #fff;
+}
+
+
+.perfomance-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  
+      overflow-clip-margin: content-box;
+      overflow: clip;
+      /* overflow-x: ;/ */
+      /* overflow-y: ; */
+}
+/* Medium Screens */
+/* @media only screen and (max-width: 1023px) {
+  .contact-container {
+      width: 70%;
+      padding-inline: 24px;
+      margin-top: 20px;
+  }
+
+  .contact-container::before,
+  .contact-container::after {
+      height: 600px;
+      width: 600px;
+  }
+} */
+
+/* Mobile Screens */
+@media only screen and (max-width: 767px) {
+  .contact-container {
+      width: 80%;
+      padding-inline: 10px;
+      margin-top: 15px;
+      margin-bottom: 0; /* Adjusted margin to remove the bottom gap */
+  }
+
+  .contact-container::before,
+  .contact-container::after {
+      height: 450px;
+      width: 450px;
+  }
+
+  .form-box {
+      margin-bottom: 20px;
+  }
+
+  .form .input-box {
+      width: 100%;
+      margin: 20px 0;
+  }
+}
+header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000; /* Adjust as needed */
+      /* padding: 10px 20px; */
+      box-sizing: border-box;
+      border-radius: 30px;
+       box-shadow: 2px 2px 20px gray, inset 2px 2px 10px lightgray;
+       margin-bottom: 30px;
+       margin-top: 20px;
+       height: 100px;
+       width: auto;
+       align-items: center;
+       position: relative;
+    
+    }
+    
+    .header-logo img {
+      width: auto; /* Adjust logo size as needed */
+    }
+    
+    .header-nav {
+      flex-grow: 1;
+      text-align: center;
+    }
+    
+    .header-nav a {
+      color: #fff; /* Adjust link color as needed */
+      text-decoration: none;
+      margin: 0 30px;
+      font-size: 18px;
+    }
+    .social-icons {
+    margin-bottom: 20px;
+    margin-left: 20px; /* Adjust the left margin as needed */
+    margin-right: 30px;
+}
+
+.social-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px; /* Add right margin to separate icons/buttons */
+}
+
+.social-icons button i {
+    vertical-align: middle;
+}
+
+.social-icons button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+       /* Logo styles */
+       .logo {
+        position: absolute;
+        top: 10px;
+        height: 70px;
+        width: auto;
+        left: 60px;
+        /* animation: fadeIn 2s ease-in; Animation for fade in effect */
+        mix-blend-mode: lighten;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .logo-img {
+        height: 250px;
+        width: auto;
+      }
+      
+  </style>
+    <body>
+      <header>
+        <div class="header-logo">
+          <img src="images/rtbnlogo.png" class="logo" alt="Logo">
+        </div>
+        <nav class="header-nav">
+          <a href="test.html">Home</a>
+          <a href="about-us.html">About</a>
+          <a href="new.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <!-- Add more navigation links as needed -->
+        </nav>
+        <div class="header-social">
+          <div class="social-icons">
+            <button>   <a href="https://www.facebook.com/YouSavad?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+            <button>  <a href="https://instagram.com/raagthebandbengaluru?igshid=YmMyMTA2M2Y" target="_blank"><i class="fab fa-instagram"></i></a></button>
+            <button>  <a href="https://wa.me/message/WZQNY3EAESPNB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <button> <a href="https://youtube.com/@raagthebandbengaluru" target="_blank"><i class="fab fa-youtube"></i></a></button>
+                <button><i class="fas fa-envelope"></i></button>
+        </div>
+        </div>
+      </header>
+<body>
+
+    <div class="contact-container">
+        <div class="image">
+            <div class="form-box">
+                <div class="form">
+                    <h2>Contact Us</h2>
+                    <div class="input-box">
+                        <input type="text" required />
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" required />
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required />
+                        <label for="eventName">Event Type</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="date"label for="eventDate" required />
+                        <label for="eventDate"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required />
+                        <label for="eventPlace">Venue</label>
+                    </div>
+                    <!-- <div class="input-box">
+                        <input type="number" required />
+                        <label for="bandsRequired">No. of Bands Required</label>
+                    </div>
+                        -->
+                    <button type="submit"><a href="https://wa.me/message/WZQNY3EAESPNB1" target="_blank"></a>Book Now</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+       <!-- font awesome script -->
+       <script src="https://kit.fontawesome.com/393ff6bdca.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

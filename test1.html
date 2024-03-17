@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <div class="hero-page">
+        <div class="logo">
+            <img src="images/rtbnlogo.png" alt="Logo" class="logo-img">
+        </div>
+        <!-- Toggle button for mobile screens -->
+        <button class="toggle-menu-btn"><i class="fas fa-bars"></i></button>
+        <div class="hero-content">
+            <section class="waves-demo">
+                <div class="waves" data-word="RAAG THE BAND">
+                 RAAG THE BAND
+                </div>
+        </section>
+            <p class="subtitle">
+               SINCE 2005.</p>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+               <button>   <a href="https://www.facebook.com/YouSavad?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+            <button>  <a href="https://instagram.com/raagthebandbengaluru?igshid=YmMyMTA2M2Y" target="_blank"><i class="fab fa-instagram"></i></a></button>
+            <button>  <a href="https://wa.me/message/WZQNY3EAESPNB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <button> <a href="https://youtube.com/@raagthebandbengaluru" target="_blank"><i class="fab fa-youtube"></i></a></button>
+                <button><i class="fas fa-envelope"></i></button>
+            </div>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    </div>
+</main>
+   <div class="introduction-section">
+        <h2>About RAAG the Band</h2>
+        <p>
+            RAAG the Band, based in Bangalore, has been captivating audiences worldwide since 2005 with their
+            charismatic vibes, breathtaking performances, and hypnotizing voices. Comprised of musicians skilled in
+            Indian classical and Western music, they have already delivered over 7000 shows. Our dedicated team of
+            imaginative professionals crafts unparalleled entertainment exclusively for you, blending Indian and
+            Western music seamlessly. We prioritize quality and your preferences, boasting a competitive edge and
+            years of industry experience that make us an ideal partner.
+        </p>
+        <p>
+            By entrusting RAAG the Band, we consistently exceed expectations, regardless of the circumstances. We
+            prioritize relationships with corporates, business firms, organizations, private companies, and
+            individuals. We are fortunate to feature two exceptionally talented multilingual singers who have graced
+            stages globally for over a decade. Their diverse repertoire effortlessly enchants audiences with
+            renditions in Hindi, English, Kannada, Tamil, Malayalam, and Telugu, bringing immense joy and
+            representing musical excellence.
+        </p>
+
+    </div>
+<!-- =============================== -->
+   <!-- ==========media/gallery=========== -->
+   <section>
+    <div class="wrapper">
+        <h1>Gallery</h1>
+        <div class="container">
+            <div class="horizontal"><img src="images/rgb13.jpg" alt=""></div>
+            <div class="vertical"><img src="images/rgb14.jpg" alt=""></div>
+            <div><img src="images/rgb18.jpg" alt=""></div>
+            <div class="big"><img src="images/rgb17.jpg" alt=""></div>
+            <div class="vertical"><img src="images/rgb12.jpg" alt=""></div>
+            <div class="horizontal"><img src="images/rgb7.jpg" alt=""></div>
+            <div><img src="images/rgb5.jpg" alt=""></div>
+            <div class="horizontal"><img src="images/rgb10.jpg" alt=""></div>
+            <div><img src="images/rgb11.jpg" alt=""></div>
+            <div><img src="images/rgb4.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================= -->
+<div class="contact-container">
+    <div class="image">
+        <div class="form-box">
+            <div class="form">
+                <h2>Contact Us</h2>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="tel" required />
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" required />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="eventName">Event Type</label>
+                </div>
+                <div class="input-box">
+                    <input type="date"label for="eventDate" required />
+                    <label for="eventDate"></label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="eventPlace">Venue</label>
+                </div>
+                <!-- <div class="input-box">
+                    <input type="number" required />
+                    <label for="bandsRequired">No. of Bands Required</label>
+                </div>
+                    -->
+                <button type="submit">Book Now</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ==================================== -->
+<footer>
+    &copy; 2024 raagtheband. All Rights Reserved.
+</footer>
+<!-- font awesome script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.querySelector('.toggle-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+        });
+    });
+</script>
+<script src="https://kit.fontawesome.com/393ff6bdca.js" crossorigin="anonymous"></script>
+</body>
+</html>

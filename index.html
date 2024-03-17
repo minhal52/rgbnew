@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        /* Common styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            /* scroll-behavior: smooth; */
+            
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #000000;
+            /* overflow-x: hidden; */
+            
+            position: sticky;
+        }
+
+/* Common styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    position: sticky;
+}
+
+/* Hero page styles */
+.hero-page {
+    background-color: #f0f0f0;
+    background-image: url("images/herorgbn.jpg");
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 100vh; /* Set min-height to cover entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: zoomInOut 8s infinite alternate;
+    position: relative; /* Ensure relative positioning for absolute elements */
+    overflow: hidden; /* Remove scrollbar */
+}
+
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Logo styles */
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    animation: fadeIn 2s ease-in;
+    mix-blend-mode: lighten;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+}
+
+/* Hero content styles */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #000;
+    font-weight: bolder;
+    margin-bottom: 20px; /* Reduced margin for navigation links */
+}
+
+/* Navigation styles */
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.nav-links ul li {
+    margin-right: 20px;
+}
+
+.nav-links ul li:last-child {
+    margin-right: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* Social icons styles */
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons button a{
+    text-decoration: none;
+}
+
+.social-icons button a{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+    margin: 0 10px;
+    margin-top: 20px;
+}
+
+.social-icons button {
+    color: black;
+    background-color: transparent;
+}
+
+.social-icons button i {
+    vertical-align: middle;
+}
+
+/* Book now button styles */
+.book-now-btn {
+    background-color: #fff;
+    color: black;
+    height: 50px;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-now-btn:hover {
+    background-color:transparent;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+}
+
+/* Toggle menu button styles for mobile screens */
+.toggle-menu-btn {
+    display: block;
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    z-index: 1000;
+}
+
+/* Navigation styles for mobile screens */
+@media screen and (max-width: 576px) {
+    .nav-links ul {
+        display: none;
+        position: relative;
+        align-items: center;
+        top: 60px;
+        left: 50%; /* Center the navigation links horizontally */
+        transform: translateX(-50%); /* Move the links back by 50% of their width to center them */
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 30px;
+        height: 100px;
+        background-color: white; /* Set background color to white */
+        width: 100%; /* Set a percentage width for responsiveness */
+    }
+
+    .nav-links.show ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        mix-blend-mode: lighten;
+    }
+}
+
+        /* ============================== */
+        
+/* about section */
+ /* Introduction section styles */
+.introduction-section {
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px; /* Adjust the padding as needed */
+  height: 100vh;
+  margin-top: 80px;
+  top: 40px;
+  position: relative; /* Add position relative */
+}
+
+.introduction-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  align-items: center;
+
+}
+
+.introduction-section p {
+  font-size: 18px;
+  line-height: 2.5;
+  width: 900px; /* Set the desired width */
+  margin: 0 auto; /* Set margins to auto to horizontally center */
+  text-align: center; /* Center the text within the paragraph */
+}
+
+
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 767px) {
+  .introduction-section {
+    padding: 30px 10px; /* Adjust the padding for mobile screens */
+  }
+  .about-content {
+    height: 100vh; /* Take up full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .introduction-section p {
+  font-size: 18px;
+  line-height: 2.5;
+  width: 375px; /* Set the desired width */
+  /* margin: 0 auto; Set margins to auto to horizontally center */
+  text-align: center; /* Center the text within the paragraph */
+}
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 768px) {
+  .introduction-section {
+    height: 100vh; /* Reset height for larger screens */
+    padding: 0; /* Reset padding for larger screens */
+  }
+
+  .about-content {
+    height: 100vh; /* Take up full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* ============================================================================== */
+/* gallery */
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 38px;
+    text-align: center;
+    color: #fff;
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.container > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.container img {
+    transition: all 1s ease-in-out 0s;
+    box-shadow: 2px 2px 20px gray, inset 2px 2px 10px lightgray;
+}
+
+.container img:hover {
+    transition: all 1s ease-in-out 0s;
+    box-shadow: 2px 2px 20px gray, inset 2px 2px 10px lightgray;
+}
+
+/* Grid */
+.container {
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Set maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    height: auto; /* Adjust height as needed */
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 125px;
+    grid-auto-flow: dense; /* Fill all spaces with fitted images */
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.wrapper {
+  width: 100vw; /* Set width to cover entire viewport width */
+  height: 100vh; /* Set height to cover entire viewport height */
+}
+.wrapper h1{
+  align-items: center;
+  padding: 50px;
+}
+/* Media Queries */
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        width: 960px;
+        margin: 0 auto;
+    }
+}
+
+/* ======================================== */
+
+.contact-container {
+    position: relative;
+    width: 350px;
+    height: 600px; /* Increased height */
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 32px;
+    overflow: hidden;
+    margin: auto; /* Center the container */
+    /* margin-top: 25px; */
+    margin-bottom: 50px;
+}
+
+.contact-container::before {
+    content: "";
+    position: absolute;
+    height: 750px; /* Adjusted height */
+    width: 750px;
+    background: conic-gradient(transparent, transparent, transparent, #d400d4);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+.contact-container::after {
+    content: "";
+    position: absolute;
+    height: 750px; /* Adjusted height */
+    width: 750px;
+    background: conic-gradient(transparent, transparent, transparent, #00cfff);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.image {
+    position: absolute;
+    inset: 5px;
+    background-color: #0c1022;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.form-box .form h2 {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+}
+
+.form .input-box {
+    position: relative;
+    margin: 20px 0; /* Adjusted margin */
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.input-box label {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.group a {
+    position: relative;
+    top: -15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+button {
+    margin-top: 10px; /*added margin */
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+button:focus {
+    color: #fff;
+    background-color: #0c1022;
+    border: 2px solid #fff;
+}
+
+
+.perfomance-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    
+        overflow-clip-margin: content-box;
+        overflow: clip;
+        /* overflow-x: ;/ */
+        /* overflow-y: ; */
+}
+/* Medium Screens */
+/* @media only screen and (max-width: 1023px) {
+    .contact-container {
+        width: 70%;
+        padding-inline: 24px;
+        margin-top: 20px;
+    }
+
+    .contact-container::before,
+    .contact-container::after {
+        height: 600px;
+        width: 600px;
+    }
+} */
+
+/* Mobile Screens */
+@media only screen and (max-width: 767px) {
+    .contact-container {
+        width: 80%;
+        padding-inline: 10px;
+        margin-top: 15px;
+        margin-bottom: 0; /* Adjusted margin to remove the bottom gap */
+    }
+
+    .contact-container::before,
+    .contact-container::after {
+        height: 450px;
+        width: 450px;
+    }
+
+    .form-box {
+        margin-bottom: 20px;
+    }
+
+    .form .input-box {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+
+/* ============================waves */
+.waves-demo {
+    /* height: 100vh; */
+    font-size: 80px;
+    font-weight: bold;
+    transition: all 200ms;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    overflow: hidden; /* Add this line to remove scrollbar */
+}
+.waves-demo {
+    background: transparent;
+}
+/*Waves*/
+.waves {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    position: relative;
+}
+.waves:after{
+    content: attr(data-word);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    animation: waves 2s ease-in-out infinite forwards;
+}
+@keyframes waves{
+    0%, 100% {
+        clip-path: polygon(0 66%, 11% 59%, 18% 51%, 26% 46%, 35% 41%, 48% 44%, 55% 54%, 63% 63%, 76% 60%, 82% 50%, 92% 48%, 100% 53%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0 66%, 8% 74%, 17% 77%, 28% 70%, 35% 57%, 48% 44%, 56% 39%, 69% 41%, 75% 47%, 84% 60%, 92% 61%, 100% 53%, 100% 100%, 0% 100%);
+    }
+}
+
+/* ==================================================== */
+footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* =============================know more button=========================== */
+   /* Know More button styles */
+   .know-more-btn {
+  color: white; /* White text */
+  font-size: 18px; /* Font size */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth background color and text color transition */
+  text-decoration: none; /* Remove text decoration */
+  background-color: transparent; /* Transparent background */
+  /* padding: 15px 20px; Padding around the text */
+}
+
+.know-more-btn:hover {
+  /* background-color: rgba(255, 255, 255, 0.3); White background with some transparency on hover */
+  color:black; /* White text on hover */
+}
+
+/* Set color to black for the anchor tag */
+.know-more-btn,
+.know-more-btn a:hover {
+  color: black; /* Set text color to black */
+}
+
+
+/* Apply initial position to heading and paragraph */
+.introduction-section h2,
+.introduction-section p {
+  opacity: 0;
+  transform: scale(0.8); /* Initially scale down to 80% */
+  transition: opacity 2s ease, transform 2s ease; /* Slow transition */
+}
+
+/* Animation for heading */
+.introduction-section h2.animate {
+  opacity: 1;
+  transform: scale(1); /* Zoom in to 100% */
+}
+
+/* Animation for paragraph */
+.introduction-section p.animate {
+  opacity: 1;
+  transform: scale(1); /* Zoom in to 100% */
+}
+
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="hero-page">
+        <div class="logo">
+            <img src="images/rtbnlogo.png" alt="Logo" class="logo-img">
+        </div>
+        <!-- Toggle button for mobile screens -->
+        <button class="toggle-menu-btn"><i class="fas fa-bars"></i></button>
+        <div class="hero-content">
+            <section class="waves-demo">
+                <div class="waves" data-word="RAAG THE BAND">
+                 RAAG THE BAND
+                </div>
+        </section>
+            <p class="subtitle">
+               SINCE 2005.</p>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+               <button>   <a href="https://www.facebook.com/YouSavad?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
+            <button>  <a href="https://instagram.com/raagthebandbengaluru?igshid=YmMyMTA2M2Y" target="_blank"><i class="fab fa-instagram"></i></a></button>
+            <button>  <a href="https://wa.me/message/WZQNY3EAESPNB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <button> <a href="https://youtube.com/@raagthebandbengaluru" target="_blank"><i class="fab fa-youtube"></i></a></button>
+                <button><i class="fas fa-envelope"></i></button>
+            </div>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    </div>
+</main>
+<div class="introduction-section" id="about-section">
+    <h2>About RAAG the Band</h2>
+    <p>
+        RAAG the Band, based in Bangalore, has been captivating audiences worldwide since 2005 with their
+        charismatic vibes, breathtaking performances, and hypnotizing voices. Comprised of musicians skilled in
+        Indian classical and Western music, they have already delivered over 7000 shows. Our dedicated team of
+        imaginative professionals crafts unparalleled entertainment exclusively for you, blending Indian and
+        Western music seamlessly. We prioritize quality and your preferences, boasting a competitive edge and
+        years of industry experience that make us an ideal partner.
+    </p>
+    <button><a href="about-us.html" class="know-more-btn">Know More</a></button>
+</div>
+
+<!-- =============================== -->
+   <!-- ==========media/gallery=========== -->
+   <section>
+    <div class="wrapper">
+        <h1>Gallery</h1>
+        <div class="container">
+            <div class="horizontal"><img src="images/rgb13.jpg" alt=""></div>
+            <div class="vertical"><img src="images/rgb14.jpg" alt=""></div>
+            <div><img src="images/rgb18.jpg" alt=""></div>
+            <div class="big"><img src="images/rgb17.jpg" alt=""></div>
+            <div class="vertical"><img src="images/rgb12.jpg" alt=""></div>
+            <div class="horizontal"><img src="images/rgb7.jpg" alt=""></div>
+            <div><img src="images/rgb5.jpg" alt=""></div>
+            <div class="horizontal"><img src="images/rgb10.jpg" alt=""></div>
+            <div><img src="images/rgb11.jpg" alt=""></div>
+            <div><img src="images/rgb4.jpg" alt=""></div>
+            <div class="horizontal"><img src="images/rgb7.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================= -->
+<div class="contact-container">
+    <div class="image">
+        <div class="form-box">
+            <div class="form">
+                <h2>Contact Us</h2>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="tel" required />
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" required />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="eventName">Event Type</label>
+                </div>
+                <div class="input-box">
+                    <input type="date"label for="eventDate" required />
+                    <label for="eventDate"></label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label for="eventPlace">Venue</label>
+                </div>
+                <!-- <div class="input-box">
+                    <input type="number" required />
+                    <label for="bandsRequired">No. of Bands Required</label>
+                </div>
+                    -->
+                <button type="submit">Book Now</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ==================================== -->
+<footer>
+    &copy; 2024 raagtheband. All Rights Reserved.
+</footer>
+<!-- font awesome script -->
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.querySelector('.toggle-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+        });
+    });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var gallerySection = document.querySelector('section');
+    var galleryContainer = document.querySelector('.container');
+
+    function handleScroll() {
+        var sectionTop = gallerySection.getBoundingClientRect().top;
+
+        // Check if the gallery section is in view
+        if (sectionTop <= window.innerHeight && sectionTop >= 0) {
+            animateGallery();
+            window.removeEventListener('scroll', handleScroll); // Remove event listener after animation is triggered
+        }
+    }
+
+    function animateGallery() {
+        galleryContainer.style.opacity = '1';
+        galleryContainer.style.transform = 'scale(1)';
+        galleryContainer.style.animation = 'zoomIn 1s forwards'; // Apply zoom-in animation
+    }
+
+    // Add event listener for scrolling
+    window.addEventListener('scroll', handleScroll);
+});
+
+</script>
+<script src="https://kit.fontawesome.com/393ff6bdca.js" crossorigin="anonymous"></script>
+</body>
+</html>
